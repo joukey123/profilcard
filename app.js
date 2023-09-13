@@ -2,6 +2,7 @@ const profileBtn = document.querySelectorAll(".profileCard-linkBtn div");
 const closeBtn = document.querySelector(".profileCard-icon span:last-child");
 const info = document.querySelector(".profileCard-info");
 const adress = document.querySelector(".profileCard-adress");
+const main = document.querySelector(".profileCard");
 
 function handleChangeProfile() {
   const profileImg = document.querySelector(".profileCard-info img");
@@ -63,17 +64,19 @@ function handleChangeProfile() {
       break;
   }
 
-  info.classList.remove("hidden");
-  adress.classList.remove("hidden");
+  info.classList.add("fadeIn");
+  adress.classList.add("fadeIn");
   closeBtn.classList.remove("hidden");
 }
 
 function handelCloseProfile() {
+  info.classList.remove("fadeIn");
   info.classList.add("hidden");
+  adress.classList.remove("fadeIn");
   adress.classList.add("hidden");
+
   closeBtn.classList.add("hidden");
   handleResetprofileBtn();
-
   document.body.className = null;
 }
 
